@@ -28,15 +28,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     @IBAction func reset(_ sender: AnyObject) {
         nameField.text = ""
         lyricsView.text = ""
-        nameField.text = nameField.text?.capitalized
     }
     
     @IBAction func displayLyrics(_ sender: AnyObject) {
@@ -44,7 +38,6 @@ class ViewController: UIViewController {
             lyricsView.text = lyricsForName(lyricsTemplate: bananaFanaTemplate, fullName: nameField.text!)
         }
     }
-    
 }
 
 func shortNameFromName(name: String) -> String {
