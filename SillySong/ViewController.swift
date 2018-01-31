@@ -34,9 +34,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func reset(_ sender: AnyObject) {
-        print("reset begin")
         nameField.text = ""
         lyricsView.text = ""
+        nameField.text = nameField.text?.capitalized
     }
     
     @IBAction func displayLyrics(_ sender: AnyObject) {
@@ -55,7 +55,7 @@ func shortNameFromName(name: String) -> String {
         return String(lowercaseName[firstVowelRange.lowerBound...])
     }
     
-    // no vowels = return the full name
+    // if no vowels, return the full name
     return lowercaseName
 }
 
